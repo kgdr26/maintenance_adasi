@@ -46,6 +46,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('managemachine', [MainController::class, 'managemachine'])->name('managemachine');
     // End Manage
 
+    // Production
     Route::get('createcorrective', [MainController::class, 'createcorrective'])->name('createcorrective');
+
+    // End  Production
+
+    // Maintenance
     Route::get('actioncorrective', [MainController::class, 'actioncorrective'])->name('actioncorrective');
+
+    // End Maintenance
+    
 });
