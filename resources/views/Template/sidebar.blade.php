@@ -91,19 +91,25 @@
             </li>
 
             <!-- Misc -->
-            <li class="menu-item">
+            @php
+                $array_route    = ['createcorrective'];
+            @endphp
+            <li class="menu-item @if (in_array(Route::currentRouteName() , $array_route)) active @endif">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons ti ti-file"></i>
                     <div data-i18n="Production">Production</div>
                 </a>
                 <ul class="menu-sub">
-                    <li class="menu-item">
+                    @php
+                        $array_route    = ['createcorrective'];
+                    @endphp
+                    <li class="menu-item @if (in_array(Route::currentRouteName() , $array_route)) active @endif">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons ti ti-user-circle"></i>
                             <div data-i18n="Corrective">Corrective</div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item">
+                            <li class="menu-item @if (Route::currentRouteName()=='createcorrective') active @endif">
                                 <a href="{{route('createcorrective')}}" class="menu-link">
                                     <div data-i18n="Create Corrective">Create Corrective</div>
                                 </a>
@@ -141,13 +147,16 @@
                 </ul>
             </li>
 
-            <li class="menu-item">
+            @php
+                $array_route    = ['actioncorrective'];
+            @endphp
+            <li class="menu-item @if (in_array(Route::currentRouteName() , $array_route)) active @endif">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons ti ti-file"></i>
                     <div data-i18n="Maintenance">Maintenance</div>
                 </a>
                 <ul class="menu-sub">
-                    <li class="menu-item">
+                    <li class="menu-item @if (Route::currentRouteName()=='actioncorrective') active @endif">
                         <a href="{{route('actioncorrective')}}" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-help"></i>
                             <div data-i18n="Corrective Action">Corrective Action</div>
