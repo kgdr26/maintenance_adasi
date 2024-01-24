@@ -18,7 +18,7 @@
                     <li class="menu-item">
                         <a href="" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-3d-cube-sphere"></i>
-                            <div data-i18n="Klaim Customer">Klaim Customer</div>
+                            <div data-i18n="Claim Handle">Claim Handle</div>
                         </a>
                     </li>
                 </ul>
@@ -26,56 +26,56 @@
 
             <!-- Pages -->
             @php
-                $array_route    = ['manageusers','managerole','managelocation','managesection','managemachine'];
+                $array_route = ['manageusers', 'managerole', 'managelocation', 'managesection', 'managemachine'];
             @endphp
-            <li class="menu-item @if (in_array(Route::currentRouteName() , $array_route)) active @endif">
+            <li class="menu-item @if (in_array(Route::currentRouteName(), $array_route)) active @endif">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons ti ti-file"></i>
                     <div data-i18n="Manage Data">Manage Data</div>
                 </a>
                 <ul class="menu-sub">
                     @php
-                        $array_route    = ['manageusers','managerole'];
+                        $array_route = ['manageusers', 'managerole'];
                     @endphp
-                    <li class="menu-item @if (in_array(Route::currentRouteName() , $array_route)) active @endif">
+                    <li class="menu-item @if (in_array(Route::currentRouteName(), $array_route)) active @endif">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons ti ti-user-circle"></i>
                             <div data-i18n="Manage User">Manage User</div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item @if (Route::currentRouteName()=='managerole') active @endif">
-                                <a href="{{route('managerole')}}" class="menu-link">
+                            <li class="menu-item @if (Route::currentRouteName() == 'managerole') active @endif">
+                                <a href="{{ route('managerole') }}" class="menu-link">
                                     <div data-i18n="Role">Role</div>
                                 </a>
                             </li>
-                            <li class="menu-item @if (Route::currentRouteName()=='manageusers') active @endif">
-                                <a href="{{route('manageusers')}}" class="menu-link">
+                            <li class="menu-item @if (Route::currentRouteName() == 'manageusers') active @endif">
+                                <a href="{{ route('manageusers') }}" class="menu-link">
                                     <div data-i18n="Users">Users</div>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     @php
-                        $array_route    = ['managelocation','managesection','managemachine'];
+                        $array_route = ['managelocation', 'managesection', 'managemachine'];
                     @endphp
-                    <li class="menu-item @if (in_array(Route::currentRouteName() , $array_route)) active @endif">
+                    <li class="menu-item @if (in_array(Route::currentRouteName(), $array_route)) active @endif">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons ti ti-user-circle"></i>
                             <div data-i18n="Manage Machine">Manage Machine</div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item @if (Route::currentRouteName()=='managelocation') active @endif">
-                                <a href="{{route('managelocation')}}" class="menu-link">
+                            <li class="menu-item @if (Route::currentRouteName() == 'managelocation') active @endif">
+                                <a href="{{ route('managelocation') }}" class="menu-link">
                                     <div data-i18n="Location">Location</div>
                                 </a>
                             </li>
-                            <li class="menu-item @if (Route::currentRouteName()=='managesection') active @endif">
-                                <a href="{{route('managesection')}}" class="menu-link">
+                            <li class="menu-item @if (Route::currentRouteName() == 'managesection') active @endif">
+                                <a href="{{ route('managesection') }}" class="menu-link">
                                     <div data-i18n="Section">Section</div>
                                 </a>
                             </li>
-                            <li class="menu-item @if (Route::currentRouteName()=='managemachine') active @endif">
-                                <a href="{{route('managemachine')}}" class="menu-link">
+                            <li class="menu-item @if (Route::currentRouteName() == 'managemachine') active @endif">
+                                <a href="{{ route('managemachine') }}" class="menu-link">
                                     <div data-i18n="Machine">Machine</div>
                                 </a>
                             </li>
@@ -92,25 +92,25 @@
 
             <!-- Misc -->
             @php
-                $array_route    = ['createcorrective'];
+                $array_route = ['createcorrective'];
             @endphp
-            <li class="menu-item @if (in_array(Route::currentRouteName() , $array_route)) active @endif">
+            <li class="menu-item @if (in_array(Route::currentRouteName(), $array_route)) active @endif">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons ti ti-file"></i>
                     <div data-i18n="Production">Production</div>
                 </a>
                 <ul class="menu-sub">
                     @php
-                        $array_route    = ['createcorrective'];
+                        $array_route = ['createcorrective'];
                     @endphp
-                    <li class="menu-item @if (in_array(Route::currentRouteName() , $array_route)) active @endif">
+                    <li class="menu-item @if (in_array(Route::currentRouteName(), $array_route)) active @endif">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons ti ti-user-circle"></i>
                             <div data-i18n="Corrective">Corrective</div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item @if (Route::currentRouteName()=='createcorrective') active @endif">
-                                <a href="{{route('createcorrective')}}" class="menu-link">
+                            <li class="menu-item @if (Route::currentRouteName() == 'createcorrective') active @endif">
+                                <a href="{{ route('createcorrective') }}" class="menu-link">
                                     <div data-i18n="Create Corrective">Create Corrective</div>
                                 </a>
                             </li>
@@ -148,22 +148,22 @@
             </li>
 
             @php
-                $array_route    = ['actioncorrective'];
+                $array_route = ['actioncorrective'];
             @endphp
-            <li class="menu-item @if (in_array(Route::currentRouteName() , $array_route)) active @endif">
+            <li class="menu-item @if (in_array(Route::currentRouteName(), $array_route)) active @endif">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons ti ti-file"></i>
                     <div data-i18n="Maintenance">Maintenance</div>
                 </a>
                 <ul class="menu-sub">
-                    <li class="menu-item @if (Route::currentRouteName()=='actioncorrective') active @endif">
-                        <a href="{{route('actioncorrective')}}" class="menu-link">
+                    <li class="menu-item @if (Route::currentRouteName() == 'actioncorrective') active @endif">
+                        <a href="{{ route('actioncorrective') }}" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-help"></i>
                             <div data-i18n="Corrective Action">Corrective Action</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="{{route('actioncorrective')}}" class="menu-link">
+                        <a href="{{ route('actioncorrective') }}" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-help"></i>
                             <div data-i18n="Preventive Action">Preventive Action</div>
                         </a>
@@ -178,7 +178,7 @@
                 </a>
                 <ul class="menu-sub">
                     <li class="menu-item">
-                        <a href="{{route('actioncorrective')}}" class="menu-link">
+                        <a href="{{ route('actioncorrective') }}" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-help"></i>
                             <div data-i18n="Finished Corrective">Finished Corrective</div>
                         </a>
