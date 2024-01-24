@@ -202,8 +202,8 @@
                     <div data-i18n="Deptman">Deptman</div>
                 </a>
                 <ul class="menu-sub">
-                    <li class="menu-item">
-                        <a href="{{ route('actioncorrective') }}" class="menu-link">
+                    <li class="menu-item @if (Route::currentRouteName() == 'finishedcorrective') active @endif">
+                        <a href="{{ route('finishedcorrective') }}" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-checklist"></i>
                             <div data-i18n="Finished Corrective">Finished Corrective</div>
                         </a>
