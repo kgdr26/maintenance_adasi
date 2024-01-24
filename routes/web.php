@@ -55,5 +55,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('actioncorrective', [MainController::class, 'actioncorrective'])->name('actioncorrective');
 
     // End Maintenance
+
+    // Deptman
+    Route::get('finishedcorrective', [MainController::class, 'finishedcorrective'])->name('finishedcorrective');
+
+    // End Deptman
     
 });

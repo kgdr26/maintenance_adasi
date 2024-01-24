@@ -104,7 +104,7 @@ class MainController extends Controller
 
     // End Manage Data
 
-    // Corrective
+    // Production
     function createcorrective() : object {
         $idn_user   = idn_user(auth::user()->id);
 
@@ -117,6 +117,9 @@ class MainController extends Controller
 
     }
 
+    // End Production
+
+    // Maintenance
     function actioncorrective() : object {
         $idn_user   = idn_user(auth::user()->id);
         $arr        = DB::table('trx_corrective')->select('trx_corrective.*', 'mst_machine.name as mc_name', 'mst_machine.type as mc_type', 'mst_location.name as location', 'mst_section.name as section', 'users.name as pic_name', 'mst_status.name as st_name', 'mst_status.color as st_color')
@@ -136,7 +139,30 @@ class MainController extends Controller
     }
 
     
-    // End Corrective
+    // End Maintenance
+
+    // Deptman
+    function finishedcorrective() : object {
+        $idn_user   = idn_user(auth::user()->id);
+        $arr        = DB::table('trx_corrective')->select('trx_corrective.*', 'mst_machine.name as mc_name', 'mst_machine.type as mc_type', 'mst_location.name as location', 'mst_section.name as section', 'users.name as pic_name', 'mst_status.name as st_name', 'mst_status.color as st_color')
+                                ->leftJoin('mst_status', 'mst_status.id', '=', 'trx_corrective.id_status')
+                                ->leftJoin('mst_machine', 'mst_machine.id', '=', 'trx_corrective.id_machine')
+                                ->leftJoin('mst_section', 'mst_section.id', '=', 'mst_machine.id_section')
+                                ->leftJoin('mst_location', 'mst_location.id', '=', 'mst_machine.id_location')
+                                ->leftJoin('users', 'users.id', '=', 'trx_corrective.id_user')
+                                ->orderBy('trx_corrective.date_create', 'desc')->where('trx_corrective.id_status', 5)->get();
+        $data = array(
+            'title'     => 'Corrective',
+            'arr'       => $arr,
+            'idn_user'  => $idn_user
+        );
+        
+        return view('Corrective.action')->with($data);
+
+    }
+
+    
+    // End Deptman
 
 
 

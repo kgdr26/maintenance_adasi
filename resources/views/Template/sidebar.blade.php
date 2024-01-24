@@ -171,14 +171,17 @@
                 </ul>
             </li>
 
-            <li class="menu-item">
+            @php
+                $array_route = ['finishedcorrective'];
+            @endphp
+            <li class="menu-item @if (in_array(Route::currentRouteName(), $array_route)) active @endif">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons ti ti-file"></i>
                     <div data-i18n="Deptman">Deptman</div>
                 </a>
                 <ul class="menu-sub">
                     <li class="menu-item">
-                        <a href="{{ route('actioncorrective') }}" class="menu-link">
+                        <a href="{{ route('finishedcorrective') }}" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-help"></i>
                             <div data-i18n="Finished Corrective">Finished Corrective</div>
                         </a>

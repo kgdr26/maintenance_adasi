@@ -38,7 +38,39 @@
                         <td>
                             <span class="badge rounded-pill bg-label-{{$value->st_color}}">{{$value->st_name}}</span>
                         </td>
-                        <td></td>
+                        <td>
+                            @if($value->id_status == 1)
+                                @php
+                                    $dataname   = 'start';
+                                    $databutton = 'primary';
+                                    $dataicon   = 'settings-check';
+                                @endphp
+                            @elseif($value->id_status == 2)
+                                @php
+                                    $dataname   = 'maintenance';
+                                    $databutton = 'info';
+                                    $dataicon   = 'clock-star';
+                                @endphp
+                            @elseif($value->id_status == 3)
+                                @php
+                                    $dataname   = 'waitingpart';
+                                    $databutton = 'warning';
+                                    $dataicon   = 'clock-star';
+                                @endphp
+                            @else
+                                @php
+                                    $dataname   = '';
+                                    $databutton = 'primary';
+                                    $dataicon   = '';
+                                @endphp
+                            @endif
+                            <button type="button" class="btn btn-icon btn-{{$databutton}} waves-effect waves-light" data-name="{{$dataname}}" data-item="{{$value->id}}">
+                                <span class="ti ti-{{$dataicon}}"></span>
+                            </button>
+                            <button type="button" class="btn btn-icon btn-secondary waves-effect waves-light" data-name="showdetail" data-item="{{$value->id}}">
+                                <span class="ti ti-eye"></span>
+                            </button>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
