@@ -5,20 +5,42 @@
             <!-- Dashboards -->
             <li class="menu-item">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
-                    <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                    <i class="menu-icon tf-icons ti ti-dashboard"></i>
                     <div data-i18n="Dashboards">Dashboards</div>
                 </a>
                 <ul class="menu-sub">
                     <li class="menu-item">
                         <a href="" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-chart-pie-2"></i>
+                            <i class="menu-icon tf-icons ti ti-dashboard"></i>
                             <div data-i18n="Maintenance">Maintenance</div>
                         </a>
                     </li>
                     <li class="menu-item">
                         <a href="" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-3d-cube-sphere"></i>
+                            <i class="menu-icon tf-icons ti ti-dashboard"></i>
                             <div data-i18n="Claim Handle">Claim Handle</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- Dashboards -->
+            <li class="menu-item">
+                <a href="javascript:void(0)" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                    <div data-i18n="Sales">Sales</div>
+                </a>
+                <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-chart-pie-2"></i>
+                            <div data-i18n="Maintenance View">Maintenance View</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-3d-cube-sphere"></i>
+                            <div data-i18n="Complain/Claim View">Complain/Claim View</div>
                         </a>
                     </li>
                 </ul>
@@ -30,7 +52,7 @@
             @endphp
             <li class="menu-item @if (in_array(Route::currentRouteName(), $array_route)) active @endif">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
-                    <i class="menu-icon tf-icons ti ti-file"></i>
+                    <i class="menu-icon tf-icons ti ti-book"></i>
                     <div data-i18n="Manage Data">Manage Data</div>
                 </a>
                 <ul class="menu-sub">
@@ -60,7 +82,7 @@
                     @endphp
                     <li class="menu-item @if (in_array(Route::currentRouteName(), $array_route)) active @endif">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons ti ti-user-circle"></i>
+                            <i class="menu-icon tf-icons ti ti-home"></i>
                             <div data-i18n="Manage Machine">Manage Machine</div>
                         </a>
                         <ul class="menu-sub">
@@ -83,7 +105,7 @@
                     </li>
                     <li class="menu-item">
                         <a href="" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-help"></i>
+                            <i class="menu-icon tf-icons ti ti-tool"></i>
                             <div data-i18n="Sparepart">Sparepart</div>
                         </a>
                     </li>
@@ -116,7 +138,7 @@
                             </li>
                             <li class="menu-item">
                                 <a href="" class="menu-link">
-                                    <div data-i18n="Corrective Waiting Closed">Corrective Waiting Closed</div>
+                                    <div data-i18n="History Corrective">History Corrective</div>
                                 </a>
                             </li>
                         </ul>
@@ -152,19 +174,19 @@
             @endphp
             <li class="menu-item @if (in_array(Route::currentRouteName(), $array_route)) active @endif">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
-                    <i class="menu-icon tf-icons ti ti-file"></i>
+                    <i class="menu-icon tf-icons ti ti-3d-cube-sphere"></i>
                     <div data-i18n="Maintenance">Maintenance</div>
                 </a>
                 <ul class="menu-sub">
                     <li class="menu-item @if (Route::currentRouteName() == 'actioncorrective') active @endif">
                         <a href="{{ route('actioncorrective') }}" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-help"></i>
+                            <i class="menu-icon tf-icons ti ti-box"></i>
                             <div data-i18n="Corrective Action">Corrective Action</div>
                         </a>
                     </li>
                     <li class="menu-item">
                         <a href="{{ route('actioncorrective') }}" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-help"></i>
+                            <i class="menu-icon tf-icons ti ti-star"></i>
                             <div data-i18n="Preventive Action">Preventive Action</div>
                         </a>
                     </li>
@@ -173,14 +195,20 @@
 
             <li class="menu-item">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
-                    <i class="menu-icon tf-icons ti ti-file"></i>
+                    <i class="menu-icon tf-icons ti ti-box-multiple"></i>
                     <div data-i18n="Deptman">Deptman</div>
                 </a>
                 <ul class="menu-sub">
                     <li class="menu-item">
                         <a href="{{ route('actioncorrective') }}" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-help"></i>
+                            <i class="menu-icon tf-icons ti ti-checklist"></i>
                             <div data-i18n="Finished Corrective">Finished Corrective</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{ route('actioncorrective') }}" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-checklist"></i>
+                            <div data-i18n="Control Preventive">Control Preventive</div>
                         </a>
                     </li>
                 </ul>
@@ -189,14 +217,20 @@
             <!-- Misc -->
             <li class="menu-item">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
-                    <i class="menu-icon tf-icons ti ti-box-multiple"></i>
-                    <div data-i18n="Laporan">Laporan</div>
+                    <i class="menu-icon tf-icons ti ti-report"></i>
+                    <div data-i18n="Report">Report</div>
                 </a>
                 <ul class="menu-sub">
                     <li class="menu-item">
                         <a href="" target="_blank" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-lifebuoy"></i>
-                            <div data-i18n="Laporan Maintenance">Laporan Maintenance</div>
+                            <i class="menu-icon tf-icons ti ti-report"></i>
+                            <div data-i18n="Report Maintenance">Report Maintenance</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="" target="_blank" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-report"></i>
+                            <div data-i18n="Report Claim Handle">Report Claim Handle</div>
                         </a>
                     </li>
                 </ul>
