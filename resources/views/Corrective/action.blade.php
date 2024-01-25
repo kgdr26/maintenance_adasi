@@ -41,32 +41,47 @@
                         <td>
                             @if($value->id_status == 1)
                                 @php
-                                    $dataname   = 'start';
-                                    $databutton = 'primary';
-                                    $dataicon   = 'settings-check';
+                                    $dataname       = 'start';
+                                    $databutton     = 'primary';
+                                    $dataicon       = 'settings-check';
+                                    $datadisplay    = 'block';
                                 @endphp
                             @elseif($value->id_status == 2)
                                 @php
-                                    $dataname   = 'maintenance';
-                                    $databutton = 'info';
-                                    $dataicon   = 'clock-star';
+                                    $dataname       = 'maintenance';
+                                    $databutton     = 'info';
+                                    $dataicon       = 'clock-star';
+                                    $datadisplay    = 'block';
                                 @endphp
                             @elseif($value->id_status == 3)
                                 @php
-                                    $dataname   = 'waitingpart';
-                                    $databutton = 'warning';
-                                    $dataicon   = 'clock-star';
+                                    $dataname       = 'waitingpart';
+                                    $databutton     = 'warning';
+                                    $dataicon       = 'clock-star';
+                                    $datadisplay    = 'block';
+                                @endphp
+                            @elseif($value->id_status == 5)
+                                @php
+                                    $dataname       = 'waitingclose';
+                                    $databutton     = 'primary';
+                                    $dataicon       = 'clock-star';
+                                    $datadisplay    = 'block';
                                 @endphp
                             @else
                                 @php
-                                    $dataname   = '';
-                                    $databutton = 'primary';
-                                    $dataicon   = '';
+                                    $dataname       = '';
+                                    $databutton     = '';
+                                    $dataicon       = '';
+                                    $datadisplay    = 'none';
                                 @endphp
                             @endif
-                            <button type="button" class="btn btn-icon btn-{{$databutton}} waves-effect waves-light" data-name="{{$dataname}}" data-item="{{$value->id}}">
-                                <span class="ti ti-{{$dataicon}}"></span>
-                            </button>
+
+                            @if(in_array($value->id_status, $listcorr))
+                                <button type="button" class="btn btn-icon btn-{{$databutton}} waves-effect waves-light" data-name="{{$dataname}}" data-item="{{$value->id}}">
+                                    <span class="ti ti-{{$dataicon}}"></span>
+                                </button>
+                            @endif
+
                             <button type="button" class="btn btn-icon btn-secondary waves-effect waves-light" data-name="showdetail" data-item="{{$value->id}}">
                                 <span class="ti ti-eye"></span>
                             </button>

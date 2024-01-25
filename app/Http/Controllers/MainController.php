@@ -128,10 +128,12 @@ class MainController extends Controller
                                 ->leftJoin('mst_section', 'mst_section.id', '=', 'mst_machine.id_section')
                                 ->leftJoin('mst_location', 'mst_location.id', '=', 'mst_machine.id_location')
                                 ->leftJoin('users', 'users.id', '=', 'trx_corrective.id_user')->orderBy('trx_corrective.date_create', 'desc')->get();
+        $listcorr   = [1,2,3,4];
         $data = array(
             'title'     => 'Corrective',
             'arr'       => $arr,
-            'idn_user'  => $idn_user
+            'idn_user'  => $idn_user,
+            'listcorr'  =>  $listcorr
         );
      
         return view('Corrective.action')->with($data);
@@ -151,10 +153,12 @@ class MainController extends Controller
                                 ->leftJoin('mst_location', 'mst_location.id', '=', 'mst_machine.id_location')
                                 ->leftJoin('users', 'users.id', '=', 'trx_corrective.id_user')
                                 ->orderBy('trx_corrective.date_create', 'desc')->where('trx_corrective.id_status', 5)->get();
+        $listcorr   = [5];
         $data = array(
             'title'     => 'Corrective',
             'arr'       => $arr,
-            'idn_user'  => $idn_user
+            'idn_user'  => $idn_user,
+            'listcorr'  => $listcorr
         );
         
         return view('Corrective.action')->with($data);
